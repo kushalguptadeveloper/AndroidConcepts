@@ -1,0 +1,42 @@
+<resources>
+    <string name="app_name">AndroidConcepts</string>
+
+    <string name="navigation_drawer_open">Open navigation drawer</string>
+    <string name="navigation_drawer_close">Close navigation drawer</string>
+
+    <string name="action_settings">Settings</string>
+
+    <!-- TODO: Remove or change this placeholder text -->
+    <string name="hello_blank_fragment">Hello blank fragment</string>
+    <string name="explicit_intent">
+        <b><u>Just for starting an activity</u></b>\n
+
+Intent i=new Intent(MainActivity.this,secondActivity.class);\n
+startActivity(i);\n
+
+
+<b><u>For passing some data from one activity to another activity</u></b>\n
+
+Intent i=new Intent(MainActivity.this,secondActivity.class);\n
+Bundle bundle=new Bundle();\n
+
+//Add your data from getFactualResults method to bundle\n
+bundle.putString("VENUE_NAME", venueName);\n
+//Add the bundle to the intent\n
+i.putExtras(bundle);\n
+startActivity(i);\n
+
+
+
+<b><u>For receiving data on second activity</u></b>\n
+
+Bundle bundle = getIntent().getExtras();\n
+
+//Extract the data…\n
+String venName = bundle.getString("VENUE_NAME");\n
+
+//Create the text view\n
+TextView textView = new TextView(this);\n
+textView.setTextSize(40);\n
+textView.setText(venName);</string>
+</resources>
